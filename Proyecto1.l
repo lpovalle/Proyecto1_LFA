@@ -1,15 +1,21 @@
+%{
 
+    #include<stdio.h>
 
-    BINARIO 0b[01]+
-    //decimal ([1-9][0-9]*|0)
-    //octal       0[0-7]+
-    //hexa        0[xX][0-9a-fA-F]+
-    //variable    "$"[a-zA-Z]+
-    //booleano    ([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])
+%}
 
+binario     0b[01]+
+decimal     ([1-9][0-9]*|0)
+octal       0[0-7]+
+hexa        0[xX][0-9a-fA-F]+
+variable    "$"[a-zA-Z]+
+booleano    ([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])
+lnum        [0-9]+
+dnum        ([0-9]*[\.]{lnum})|({lnum}[\.][0-9]*)
+exponent_dnum [+-]?(({lnum}|{dnum})[eE][+-]?{lnum})
+cadena      [A-Za-z]+
 
 %%
-
 "__halto_compiler()"    {printf("Reservada\t\n"); }
 "abstract"              {printf("Reservada\t\n"); }
 "and"                   {printf("Reservada\t\n"); }
@@ -86,21 +92,30 @@
 "**"                    {printf("Op aritmetica\t\n"); }
 "%"                     {printf("Op aritmetica\t\n"); }
 
-"and"                   {printf("op logica\t\n"); }
-"or"                    {printf("op logica\t\n"); }
-"xor"                   {printf("op logica\t\n"); }
 "&&"                    {printf("op logica\t\n"); }
 "!"                     {printf("op logica\t\n"); }
- 
-[+-]?{BINARIO}              {printf("entero\t\n"); } 
+
+{variable}              {printf("var\t\n"); }
+"="                     {printf("igual\t\n"); }
+
+{booleano}              {printf("booleano\t\n"); }
+
+[+-]?{decimal}               {printf("entero\t\n"); } 
+[+-]?{binario}              {printf("entero\t\n"); } 
+[+-]?{octal}                 {printf("entero\t\n"); } 
+[+-]?{hexa}                  {printf("entero\t\n"); } 
+
+[+-]?{dnum}                      {printf("decimal\t\n"); } 
+[+-]?{exponent_dnum}             {printf("decimal\t\n"); } 
+
+"'"[A-Za-z!@#$%^&*()-=/+<>?{}.,\\\'\"]+"'"                   {printf("cadena\t\n"); } 
+"\""([A-Za-z!@#$%^&*()-=/+<>?{}.,\\]+)"\""                {printf("cadena\t\n"); } 
 
 
 
-
-
-
+[ ]                     ;
 .                       {printf("No reconocido\t\n"); }
-[ \t\n]                 ;
+[\t\n]                  ;
 
 
 %%
