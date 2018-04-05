@@ -8,14 +8,16 @@ binario     0b[01]+
 decimal     ([1-9][0-9]*|0)
 octal       0[0-7]+
 hexa        0[xX][0-9a-fA-F]+
-variable    "$"[a-zA-Z]+
+id          [a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*
+variable    "$"{id}
 booleano    ([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])
 lnum        [0-9]+
 dnum        ([0-9]*[\.]{lnum})|({lnum}[\.][0-9]*)
 exponent_dnum [+-]?(({lnum}|{dnum})[eE][+-]?{lnum})
-cadena      [A-Za-z]+
+vector      "["(0|[1-9][0-9]*)"]"
 
 %%
+
 "__halto_compiler()"    {printf("Reservada\t\n"); }
 "abstract"              {printf("Reservada\t\n"); }
 "and"                   {printf("Reservada\t\n"); }
@@ -83,7 +85,9 @@ cadena      [A-Za-z]+
 "while"                 {printf("Reservada\t\n"); }
 "xor"                   {printf("Reservada\t\n"); }
 "yield"                 {printf("Reservada\t\n"); }
-
+"$this"                 {printf("Variable que no puede ser asignada\t\n");}
+"=="                    {printf("igual\t\n"); }
+"="                     {printf("igual\t\n"); }
 
 "+"                     {printf("Op aritmetica\t\n"); }
 "-"                     {printf("Op aritmetica\t\n"); }
@@ -95,27 +99,34 @@ cadena      [A-Za-z]+
 "&&"                    {printf("op logica\t\n"); }
 "!"                     {printf("op logica\t\n"); }
 
-{variable}              {printf("var\t\n"); }
-"="                     {printf("igual\t\n"); }
+";"                     {printf("fin_instruccion\t\n"); }
 
 {booleano}              {printf("booleano\t\n"); }
 
-[+-]?{decimal}               {printf("entero\t\n"); } 
-[+-]?{binario}              {printf("entero\t\n"); } 
-[+-]?{octal}                 {printf("entero\t\n"); } 
-[+-]?{hexa}                  {printf("entero\t\n"); } 
+[+-]?{decimal}          {printf("entero\t\n"); } 
+[+-]?{binario}          {printf("entero\t\n"); } 
+[+-]?{octal}            {printf("entero\t\n"); } 
+[+-]?{hexa}             {printf("entero\t\n"); } 
 
-[+-]?{dnum}                      {printf("decimal\t\n"); } 
-[+-]?{exponent_dnum}             {printf("decimal\t\n"); } 
+[+-]?{dnum}             {printf("decimal\t\n"); } 
+[+-]?{exponent_dnum}    {printf("decimal\t\n"); } 
 
-"'"[A-Za-z!@#$%^&*()-=/+<>?{}.,\\\'\"]+"'"                   {printf("cadena\t\n"); } 
-"\""([A-Za-z!@#$%^&*()-=/+<>?{}.,\\]+)"\""                {printf("cadena\t\n"); } 
+"'".+"'"                {printf("cadena\t\n"); } 
+"\"".+"\""              {printf("cadena\t\n"); }
+
+{variable}              {printf("variable\t\n"); }
+
+{id}{vector}?                   {printf("constante\t\n"); }
+"define("("'"{id}"'"|"\""{id}"\""),[ ]*("'"[^\n]+"'"|"\""[^\n]+"\"")")"   {printf("constante\t\n"); }
 
 
 
-[ ]                     ;
+
+
+
+
+[ \t\n]                 ;
 .                       {printf("No reconocido\t\n"); }
-[\t\n]                  ;
 
 
 %%
