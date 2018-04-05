@@ -1,6 +1,7 @@
 %{
 
-    #include<stdio.h>
+#include <stdio.h>
+
 
 %}
 
@@ -16,85 +17,114 @@ dnum        ([0-9]*[\.]{lnum})|({lnum}[\.][0-9]*)
 exponent_dnum [+-]?(({lnum}|{dnum})[eE][+-]?{lnum})
 vector      "["(0|[1-9][0-9]*)"]"
 
+a [aA]
+b [bB]
+c [cC]
+d [dD]
+e [eE]
+f [fF]
+g [gG]
+h [hH]
+i [iI]
+j [jJ]
+k [kK]
+l [lL]
+m [mM]
+n [nN]
+o [oO]
+p [pP]
+q [qQ]
+r [rR]
+s [sS]
+t [tT]
+u [uU]
+v [vV]
+w [wW]
+x [xX]
+y [yY]
+z [zZ]
+
 %%
 
-"__halto_compiler()"    {printf("Reservada\t\n"); }
-"abstract"              {printf("Reservada\t\n"); }
-"and"                   {printf("Reservada\t\n"); }
-"array()"               {printf("Reservada\t\n"); }
-"as"                    {printf("Reservada\t\n"); }
-"break"                 {printf("Reservada\t\n"); }
-"callable"              {printf("Reservada\t\n"); }
-"case"                  {printf("Reservada\t\n"); }
-"catch"                 {printf("Reservada\t\n"); }
-"class"                 {printf("Reservada\t\n"); }
-"clone"                 {printf("Reservada\t\n"); }
-"const"                 {printf("Reservada\t\n"); }
-"continue"              {printf("Reservada\t\n"); }
-"declare"               {printf("Reservada\t\n"); }
-"default"               {printf("Reservada\t\n"); }
-"die()"                 {printf("Reservada\t\n"); }
-"do"                    {printf("Reservada\t\n"); }
-"echo"                  {printf("Reservada\t\n"); }
-"else"                  {printf("Reservada\t\n"); }
-"elseif"                {printf("Reservada\t\n"); }
-"empty()"               {printf("Reservada\t\n"); }
-"enddeclare"            {printf("Reservada\t\n"); }
-"endfor"                {printf("Reservada\t\n"); }
-"endforeach"            {printf("Reservada\t\n"); }
-"endif"                 {printf("Reservada\t\n"); }
-"endswitch"             {printf("Reservada\t\n"); }
-"endwhile"              {printf("Reservada\t\n"); }
-"eval()"                {printf("Reservada\t\n"); }
-"exit()"                {printf("Reservada\t\n"); }
-"extends"               {printf("Reservada\t\n"); }
-"final"                 {printf("Reservada\t\n"); }
-"finally"               {printf("Reservada\t\n"); }
-"for"                   {printf("Reservada\t\n"); }
-"foreach"               {printf("Reservada\t\n"); }
-"function"              {printf("Reservada\t\n"); }
-"global"                {printf("Reservada\t\n"); }
-"goto"                  {printf("Reservada\t\n"); }
-"if"                    {printf("Reservada\t\n"); }
-"implements"            {printf("Reservada\t\n"); }
-"include"               {printf("Reservada\t\n"); }
-"include_once"          {printf("Reservada\t\n"); }
-"instanceof"            {printf("Reservada\t\n"); }
-"insteadof"             {printf("Reservada\t\n"); }
-"interface"             {printf("Reservada\t\n"); }
-"isset()"               {printf("Reservada\t\n"); }
-"list()"                {printf("Reservada\t\n"); }
-"namespace"             {printf("Reservada\t\n"); }
-"new"                   {printf("Reservada\t\n"); }
-"or"                    {printf("Reservada\t\n"); }
-"print"                 {printf("Reservada\t\n"); }
-"private"               {printf("Reservada\t\n"); }
-"protected"             {printf("Reservada\t\n"); }
-"public"                {printf("Reservada\t\n"); }
-"requiere"              {printf("Reservada\t\n"); }
-"requiere_once"         {printf("Reservada\t\n"); }
-"return"                {printf("Reservada\t\n"); }
-"static"                {printf("Reservada\t\n"); }
-"switch"                {printf("Reservada\t\n"); }
-"throw"                 {printf("Reservada\t\n"); }
-"trait"                 {printf("Reservada\t\n"); }
-"try"                   {printf("Reservada\t\n"); }
-"unset()"               {printf("Reservada\t\n"); }
-"use"                   {printf("Reservada\t\n"); }
-"var"                   {printf("Reservada\t\n"); }
-"while"                 {printf("Reservada\t\n"); }
-"xor"                   {printf("Reservada\t\n"); }
-"yield"                 {printf("Reservada\t\n"); }
-"$this"                 {printf("Variable que no puede ser asignada\t\n");}
-"=="                    {printf("igual\t\n"); }
-"="                     {printf("igual\t\n"); }
+{a}{b}{s}{t}{r}{a}{c}{t}                |
+{a}{n}{d}                               |
+{a}{r}{r}{a}{y}                         |
+{a}{s}                                  |
+{b}{r}{e}{a}{k}                         |
+{c}{a}{l}{l}{a}{b}{l}{e}                |
+{c}{a}{s}{e}                            |
+{c}{a}{t}{c}{h}                         |
+{c}{l}{a}{s}{s}                         |
+{c}{l}{o}{n}{e}                         |
+{c}{o}{n}{s}{t}                         |
+{c}{o}{n}{t}{i}{n}{u}{e}                |
+{d}{e}{c}{l}{a}{r}{e}                   |
+{d}{e}{f}{a}{u}{l}{t}                   |
+{d}{i}{e}                               |
+{d}{o}                                  |
+{e}{c}{h}{o}                            |
+{e}{l}{s}{e}                            |
+{e}{l}{s}{e}{i}{f}                      |
+{e}{m}{p}{t}{y}                         |
+{e}{n}{d}{d}{e}{c}{l}{a}{r}{e}          |
+{e}{n}{d}{f}{o}{r}                      |
+{e}{n}{d}{f}{o}{r}{e}{a}{c}{h}          |
+{e}{n}{d}{i}{f}                         |
+{e}{n}{d}{s}{w}{i}{t}{c}{h}             |
+{e}{n}{d}{w}{h}{i}{l}{e}                |
+{e}{v}{a}{l}                            |
+{e}{x}{i}{t}                            |
+{e}{x}{t}{e}{n}{d}{s}                   |
+{f}{i}{n}{a}{l}                         |
+{f}{i}{n}{a}{l}{l}{y}                   |
+{f}{o}{r}                               |
+{f}{o}{r}{e}{a}{c}{h}                   |
+{f}{u}{n}{c}{t}{i}{o}{n}                |
+{g}{l}{o}{b}{a}{l}                      |
+{g}{o}{t}{o}                            |
+{i}{f}                                  |
+{i}{m}{p}{l}{e}{m}{e}{n}{t}{s}          |
+{i}{n}{c}{l}{u}{d}{e}                   |
+{i}{n}{c}{l}{u}{d}{e}[_]{o}{n}{c}{e}    |
+{i}{n}{s}{t}{a}{n}{c}{e}{o}{f}          |
+{i}{n}{s}{t}{e}{a}{d}{o}{f}             |
+{i}{n}{t}{e}{r}{f}{a}{c}{e}             |
+{i}{s}{s}{e}{t}                         |
+{l}{i}{s}{t}                            |
+{n}{a}{m}{e}{s}{p}{a}{c}{e}             |
+{n}{e}{w}                               |
+{o}{r}                                  |
+{p}{r}{i}{n}{t}                         |
+{p}{r}{i}{v}{a}{t}{e}                   |
+{p}{r}{o}{t}{e}{c}{t}{e}{d}             |
+{p}{u}{b}{l}{i}{c}                      |
+{r}{e}{q}{u}{i}{e}{r}{e}                |
+{r}{e}{q}{u}{i}{e}{r}{e}[_]{o}{n}{c}{e} |
+{r}{e}{t}{u}{r}{n}                      |
+{s}{t}{a}{t}{i}{c}                      |
+{s}{w}{i}{t}{c}{h}                      |
+{t}{h}{r}{o}{w}                         |
+{t}{r}{a}{i}{t}                         |
+{t}{r}{y}                               |
+{u}{n}{s}{e}{t}                         |
+{u}{s}{e}                               |
+{v}{a}{r}                               |
+{w}{h}{i}{l}{e}                         |
+{x}{o}{r}                               |
+{y}{i}{e}{l}{d}                         {printf("Reservada\n"); }
 
-"+"                     {printf("Op aritmetica\t\n"); }
-"-"                     {printf("Op aritmetica\t\n"); }
-"*"                     {printf("Op aritmetica\t\n"); }
-"/"                     {printf("Op aritmetica\t\n"); }
-"**"                    {printf("Op aritmetica\t\n"); }
-"%"                     {printf("Op aritmetica\t\n"); }
+"="                                     {printf("igual\n"); }
+[{|}]                                   {printf("llave\n"); }
+[(|)]                                   {printf("parentesis\n"); }
+[[|]]                                   {printf("corchete\n"); }
+
+
+"+"                                     |
+"-"                                     |
+"*"                                     |
+"/"                                     |
+"**"                                    |
+"%"                                     {printf("Op aritmetico\t\n"); }
 
 "&&"                    {printf("op logica\t\n"); }
 "!"                     {printf("op logica\t\n"); }
