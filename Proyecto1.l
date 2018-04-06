@@ -1,7 +1,7 @@
 %{
 
 #include <stdio.h>
-
+#include "miniPHP.h"
 
 %}
 
@@ -47,7 +47,7 @@ z [zZ]
 %%
 
 [<][?]{p}{h}{p}	                        |
-[?][>]		                            {printf("Etiqueta php\n"); }
+[?][>]		                            return php_etiqueta;
 
 {a}{b}{s}{t}{r}{a}{c}{t}                |
 {a}{r}{r}{a}{y}                         |
@@ -96,49 +96,49 @@ z [zZ]
 {u}{n}{s}{e}{t}                         |
 {u}{s}{e}                               |
 {v}{a}{r}                               |
-{y}{i}{e}{l}{d}                         {printf("Reservada\n"); }
+{y}{i}{e}{l}{d}                         return p_reservada;
 
-"="                                     {printf("igual\n"); }
-"=="                                    {printf("igualdad\n"); }
-[{|}]                                   {printf("llave\n"); }
-[(|)]                                   {printf("parentesis\n"); }
-[[|]]                                   {printf("corchete\n"); }
-[<|>]                                   {printf("comparacion\n"); }
+"="                                     return igual;
+"=="                                    return igualdad;
+[{|}]                                   return llave;
+[(|)]                                   return parentesis;
+[[|]]                                   return corchete;
+[<|>]                                   return comparacion;
 
 [/][/].+                                |
-[/][*](.|\r)+[*][/]                     {printf("comentario\n");} 
+[/][*](.|\r)+[*][/]                     return comentario; 
 
-";"                                     {printf("fin_instruccion\n"); }
-","                                     {printf("coma\n"); }
-"."                                     {printf("punto\n"); } 
-":"                                     {printf("dos puntos\n"); }
+";"                                     return f_instruccion;
+","                                     return coma;
+"."                                     return punto; 
+":"                                     return dospuntos;
 
 "+"                                     |
 "-"                                     |
 "*"                                     |
 "/"                                     |
 "**"                                    |
-"%"                                     {printf("Op aritmetico\n"); }
+"%"                                     return o_aritmetico;
 
 {a}{n}{d}                               |
 {o}{r}                                  |
 {x}{o}{r}                               |
 "&&"                                    |
 "||"                                    |
-"!"                                     {printf("op logica\n"); }
+"!"                                     return o_logico;
 
-{booleano}                              {printf("t bool\n"); }
+{booleano}                              return t_logico;
 
 [+-]?{decimal}                          |
 [+-]?{binario}                          |
 [+-]?{octal}                            |
-[+-]?{hexa}                             {printf("t entero\n"); } 
+[+-]?{hexa}                             return t_entero; 
 
 [+-]?{dnum}                             | 
-[+-]?{exponent_dnum}                    {printf("t decimal\n"); } 
+[+-]?{exponent_dnum}                    return t_real; 
 
 "'"(.|\r)*"'"                                |
-"\"".*"\""                              {printf("cadena\n"); }
+"\"".*"\""                              return t_cadena;
 
 
 "$GLOBALS"                              |
@@ -154,7 +154,7 @@ z [zZ]
 "$HTTP_RAW_POST_DATA"                   |
 "$http_response_header"                 |
 "$argc"                                 |
-"$argv"                                 {printf("variable definida\n"); }
+"$argv"                                 return v_definida;
 
 {i}{f}                                  |
 {e}{l}{s}{e}                            |
@@ -168,16 +168,16 @@ z [zZ]
 {c}{a}{s}{e}                            |
 {i}{n}{c}{l}{u}{d}{e}                   |
 {c}{o}{n}{t}{i}{n}{u}{e}                |
-{r}{e}{t}{u}{r}{n}                      {printf("estructura de control\n"); }
+{r}{e}{t}{u}{r}{n}                      return e_control;
 
-{f}{u}{n}{c}{t}{i}{o}{n}                {printf("funcion\n"); }
+{f}{u}{n}{c}{t}{i}{o}{n}                return funcion;
 
-{variable}                              {printf("variable\n"); }
-{id}{vector}?                           {printf("constante\n"); }
+{variable}                              return variable;
+{id}{vector}?                           return constante;
 
 
-[ \t\n]                 ;
-.                       {printf("No reconocido\t\n"); }
+[ \t\n]                                 ;
+.                                       return NO_RECONOCIDO;
 
 
 %%
