@@ -286,58 +286,58 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 #define YY_END_OF_BUFFER 117
 static yyconst short int yy_accept[481] =
     {   0,
-        0,    0,  117,  115,  114,  114,   72,  115,  115,   66,
-      115,  115,   54,   63,   61,   58,   62,   59,   64,   74,
-       74,   60,   57,   56,   51,   56,  115,  113,  113,  113,
+        0,    0,  117,  115,  114,  114,   74,  115,  115,   68,
+      115,  115,   54,   65,   63,   60,   64,   61,   66,   76,
+       76,   62,   59,   56,   51,   56,  115,  113,  113,  113,
       113,  113,  113,  113,  113,  113,  113,  113,  113,  113,
       113,  113,  113,  113,  113,  113,  113,  113,  115,   53,
-       53,    0,  112,  112,  112,  112,  112,  112,  112,   70,
-        0,    0,   65,    0,    0,   74,   74,   78,    0,    0,
-       78,   76,    0,    0,    0,    0,   74,    0,   52,    2,
+       53,    0,  112,  112,  112,  112,  112,  112,  112,   72,
+        0,    0,   67,    0,    0,   76,   76,   80,    0,    0,
+       80,   78,    0,    0,    0,    0,   76,    0,   52,    2,
       113,  113,  113,  113,    5,    0,  113,  113,  113,  113,
-      113,  113,  100,  113,  113,  113,  113,  113,  113,  113,
+      113,  113,  102,  113,  113,  113,  113,  113,  113,  113,
 
-      113,  113,  113,  113,  113,   96,  113,  113,  113,  113,
-      113,  113,   68,  113,  113,  113,  113,  113,  113,  113,
-      113,  113,  113,  113,  113,  113,   55,   71,   81,  112,
+      113,  113,  113,  113,  113,   98,  113,  113,  113,  113,
+      113,  113,   70,  113,  113,  113,  113,  113,  113,  113,
+      113,  113,  113,  113,  113,  113,   55,   73,   83,  112,
       112,  112,  112,  112,  112,  112,  112,  112,  112,  112,
-      112,  112,   80,    0,    0,    0,    0,  110,   78,    0,
-       79,   77,   75,    0,  113,   67,  113,    0,    0,  113,
+      112,  112,   82,    0,    0,    0,    0,   57,   80,    0,
+       81,   79,   77,    0,  113,   69,  113,    0,    0,  113,
       113,  113,  113,  113,  113,  113,  113,  113,   12,  113,
-      113,  113,  113,  113,  113,  113,  113,  113,  101,  113,
+      113,  113,  113,  113,  113,  113,  113,  113,  103,  113,
       113,  113,  113,  113,  113,  113,  113,  113,  113,   36,
       113,  113,  113,  113,  113,  113,  113,  113,  113,  113,
 
-       46,  113,   48,   49,  113,   69,  113,  112,  112,  112,
+       46,  113,   48,   49,  113,   71,  113,  112,  112,  112,
       112,  112,  112,  112,  112,  112,  112,  112,  112,    0,
-        0,    0,    0,  113,  113,  113,    0,  113,  113,  105,
-      113,  113,  113,  113,  113,  113,   13,   97,  113,  113,
+        0,    0,    0,  113,  113,  113,    0,  113,  113,  107,
+      113,  113,  113,  113,  113,  113,   13,   99,  113,  113,
       113,  113,  113,  113,   21,   22,  113,  113,  113,  113,
       113,  113,   27,  113,  113,  113,  113,  113,   34,  113,
       113,  113,  113,  113,  113,  113,  113,  113,  113,  113,
-       73,  113,  113,  113,  112,  112,  112,   89,  112,   84,
-      112,  112,  112,  112,   94,   95,  112,  112,    0,  111,
-        1,  113,    4,  103,  113,    7,    8,    9,  113,  113,
+       75,  113,  113,  113,  112,  112,  112,   91,  112,   86,
+      112,  112,  112,  112,   96,   97,  112,  112,    0,   58,
+        1,  113,    4,  105,  113,    7,    8,    9,  113,  113,
 
       113,  113,   14,  113,  113,   18,  113,  113,  113,   24,
       113,  113,  113,  113,  113,  113,  113,  113,   33,  113,
        37,  113,  113,  113,  113,  113,  113,  113,   44,   45,
-       47,   99,   50,  112,  112,  112,  112,   85,  112,  112,
-      112,  112,  112,  113,  113,  113,  113,  113,   98,  113,
+       47,  101,   50,  112,  112,  112,  112,   87,  112,  112,
+      112,  112,  112,  113,  113,  113,  113,  113,  100,  113,
        16,  113,  113,  113,  113,  113,  113,   26,  113,  113,
-      113,  113,  113,  113,  113,  113,   40,  113,  108,   43,
-      104,  112,  112,  112,   86,  112,  112,  112,  112,  112,
+      113,  113,  113,  113,  113,  113,   40,  113,  110,   43,
+      106,  112,  112,  112,   88,  112,  112,  112,  112,  112,
       113,  113,  113,   10,   11,  113,  113,  113,  113,   23,
-       25,  102,  113,  113,  106,  113,  113,  113,  113,   38,
+       25,  104,  113,  113,  108,  113,  113,  113,  113,   38,
 
-      113,  113,   82,  112,   90,  112,   83,  112,  112,  112,
-        3,    6,  107,  113,  113,  113,   20,  109,  113,  113,
-      113,  113,  113,  113,  113,   41,  112,   87,   88,  112,
+      113,  113,   84,  112,   92,  112,   85,  112,  112,  112,
+        3,    6,  109,  113,  113,  113,   20,  111,  113,  113,
+      113,  113,  113,  113,  113,   41,  112,   89,   90,  112,
       112,  113,  113,   19,  113,  113,  113,   31,   32,   35,
        39,  113,  112,  112,  112,   15,   17,   28,  113,   30,
       113,  112,  112,  112,  113,  113,  112,  112,  112,   29,
-      113,  112,  112,   91,   42,  112,  112,  112,  112,  112,
-      112,  112,  112,  112,  112,   92,  112,  112,   93,    0
+      113,  112,  112,   93,   42,  112,  112,  112,  112,  112,
+      112,  112,  112,  112,  112,   94,  112,  112,   95,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -355,21 +355,21 @@ static yyconst int yy_ec[256] =
 
        60,   61,   62,   63,   64,   37,   65,   66,   67,   68,
        69,   70,   71,   72,   73,   74,   75,   76,   77,   51,
-       52,   37,   78,   79,   78,    1,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
+       52,   37,   78,   79,   78,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37,   37,   37,   37,   37,   37,
-       37,   37,   37,   37,   37
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1
     } ;
 
 static yyconst int yy_meta[80] =
@@ -1190,219 +1190,183 @@ YY_RULE_SETUP
 {printf("comparacion\n"); }
 	YY_BREAK
 case 57:
-YY_RULE_SETUP
-#line 108 ".\\Proyecto1.l"
-{printf("fin_instruccion\n"); }
-	YY_BREAK
+#line 109 ".\\Proyecto1.l"
 case 58:
 YY_RULE_SETUP
 #line 109 ".\\Proyecto1.l"
-{printf("coma\n"); }
+{printf("comentario\n");} 
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 110 ".\\Proyecto1.l"
-{printf("punto\n"); } 
+#line 111 ".\\Proyecto1.l"
+{printf("fin_instruccion\n"); }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 111 ".\\Proyecto1.l"
-{printf("dos puntos\n"); }
+#line 112 ".\\Proyecto1.l"
+{printf("coma\n"); }
 	YY_BREAK
 case 61:
-#line 114 ".\\Proyecto1.l"
-case 62:
-#line 115 ".\\Proyecto1.l"
-case 63:
-#line 116 ".\\Proyecto1.l"
-case 64:
-#line 117 ".\\Proyecto1.l"
-case 65:
-#line 118 ".\\Proyecto1.l"
-case 66:
 YY_RULE_SETUP
-#line 118 ".\\Proyecto1.l"
-{printf("Op aritmetico\n"); }
+#line 113 ".\\Proyecto1.l"
+{printf("punto\n"); } 
 	YY_BREAK
+case 62:
+YY_RULE_SETUP
+#line 114 ".\\Proyecto1.l"
+{printf("dos puntos\n"); }
+	YY_BREAK
+case 63:
+#line 117 ".\\Proyecto1.l"
+case 64:
+#line 118 ".\\Proyecto1.l"
+case 65:
+#line 119 ".\\Proyecto1.l"
+case 66:
+#line 120 ".\\Proyecto1.l"
 case 67:
 #line 121 ".\\Proyecto1.l"
 case 68:
-#line 122 ".\\Proyecto1.l"
-case 69:
-#line 123 ".\\Proyecto1.l"
-case 70:
-#line 124 ".\\Proyecto1.l"
-case 71:
-#line 125 ".\\Proyecto1.l"
-case 72:
 YY_RULE_SETUP
+#line 121 ".\\Proyecto1.l"
+{printf("Op aritmetico\n"); }
+	YY_BREAK
+case 69:
+#line 124 ".\\Proyecto1.l"
+case 70:
 #line 125 ".\\Proyecto1.l"
+case 71:
+#line 126 ".\\Proyecto1.l"
+case 72:
+#line 127 ".\\Proyecto1.l"
+case 73:
+#line 128 ".\\Proyecto1.l"
+case 74:
+YY_RULE_SETUP
+#line 128 ".\\Proyecto1.l"
 {printf("op logica\n"); }
 	YY_BREAK
-case 73:
+case 75:
 YY_RULE_SETUP
-#line 127 ".\\Proyecto1.l"
+#line 130 ".\\Proyecto1.l"
 {printf("t bool\n"); }
 	YY_BREAK
-case 74:
-#line 130 ".\\Proyecto1.l"
-case 75:
-#line 131 ".\\Proyecto1.l"
 case 76:
-#line 132 ".\\Proyecto1.l"
+#line 133 ".\\Proyecto1.l"
 case 77:
-YY_RULE_SETUP
-#line 132 ".\\Proyecto1.l"
-{printf("t entero\n"); } 
-	YY_BREAK
+#line 134 ".\\Proyecto1.l"
 case 78:
 #line 135 ".\\Proyecto1.l"
 case 79:
 YY_RULE_SETUP
 #line 135 ".\\Proyecto1.l"
-{printf("t decimal\n"); } 
+{printf("t entero\n"); } 
 	YY_BREAK
 case 80:
 #line 138 ".\\Proyecto1.l"
 case 81:
 YY_RULE_SETUP
 #line 138 ".\\Proyecto1.l"
-{printf("cadena\n"); }
+{printf("t decimal\n"); } 
 	YY_BREAK
 case 82:
-#line 142 ".\\Proyecto1.l"
+#line 141 ".\\Proyecto1.l"
 case 83:
-#line 143 ".\\Proyecto1.l"
+YY_RULE_SETUP
+#line 141 ".\\Proyecto1.l"
+{printf("cadena\n"); }
+	YY_BREAK
 case 84:
-#line 144 ".\\Proyecto1.l"
-case 85:
 #line 145 ".\\Proyecto1.l"
-case 86:
+case 85:
 #line 146 ".\\Proyecto1.l"
-case 87:
+case 86:
 #line 147 ".\\Proyecto1.l"
-case 88:
+case 87:
 #line 148 ".\\Proyecto1.l"
-case 89:
+case 88:
 #line 149 ".\\Proyecto1.l"
-case 90:
+case 89:
 #line 150 ".\\Proyecto1.l"
-case 91:
+case 90:
 #line 151 ".\\Proyecto1.l"
-case 92:
+case 91:
 #line 152 ".\\Proyecto1.l"
-case 93:
+case 92:
 #line 153 ".\\Proyecto1.l"
+case 93:
+#line 154 ".\\Proyecto1.l"
 case 94:
-#line 154 ".\\Proyecto1.l"
+#line 155 ".\\Proyecto1.l"
 case 95:
-YY_RULE_SETUP
-#line 154 ".\\Proyecto1.l"
-{printf("variable definida\n"); }
-	YY_BREAK
-case 96:
-YY_RULE_SETUP
 #line 156 ".\\Proyecto1.l"
-{printf("estruct if\n"); }
-	YY_BREAK
+case 96:
+#line 157 ".\\Proyecto1.l"
 case 97:
 YY_RULE_SETUP
 #line 157 ".\\Proyecto1.l"
-{printf("estruct else\n"); }
+{printf("variable definida\n"); }
 	YY_BREAK
 case 98:
-YY_RULE_SETUP
-#line 158 ".\\Proyecto1.l"
-{printf("estruct elseif\n"); }
-	YY_BREAK
-case 99:
-YY_RULE_SETUP
-#line 159 ".\\Proyecto1.l"
-{printf("estruct while\n"); }
-	YY_BREAK
-case 100:
-YY_RULE_SETUP
 #line 160 ".\\Proyecto1.l"
-{printf("estruct do\n"); }
-	YY_BREAK
-case 101:
-YY_RULE_SETUP
+case 99:
 #line 161 ".\\Proyecto1.l"
-{printf("estruct for\n"); }
-	YY_BREAK
-case 102:
-YY_RULE_SETUP
+case 100:
 #line 162 ".\\Proyecto1.l"
-{printf("estruct foreach\n"); }
-	YY_BREAK
-case 103:
-YY_RULE_SETUP
+case 101:
 #line 163 ".\\Proyecto1.l"
-{printf("estruct break\n"); }
-	YY_BREAK
-case 104:
-YY_RULE_SETUP
+case 102:
 #line 164 ".\\Proyecto1.l"
-{printf("estruct switch\n"); }
-	YY_BREAK
-case 105:
-YY_RULE_SETUP
+case 103:
 #line 165 ".\\Proyecto1.l"
-{printf("estruct case\n"); }
-	YY_BREAK
-case 106:
-YY_RULE_SETUP
+case 104:
 #line 166 ".\\Proyecto1.l"
-{printf("estruct include\n"); }
-	YY_BREAK
-case 107:
-YY_RULE_SETUP
+case 105:
 #line 167 ".\\Proyecto1.l"
-{printf("estruct continue\n"); }
-	YY_BREAK
-case 108:
-YY_RULE_SETUP
+case 106:
 #line 168 ".\\Proyecto1.l"
-{printf("estruct return\n"); }
-	YY_BREAK
-case 109:
-YY_RULE_SETUP
+case 107:
 #line 169 ".\\Proyecto1.l"
-{printf("funcion\n"); }
-	YY_BREAK
+case 108:
+#line 170 ".\\Proyecto1.l"
+case 109:
+#line 171 ".\\Proyecto1.l"
 case 110:
-#line 172 ".\\Proyecto1.l"
+YY_RULE_SETUP
+#line 171 ".\\Proyecto1.l"
+{printf("estructura de control\n"); }
+	YY_BREAK
 case 111:
 YY_RULE_SETUP
-#line 172 ".\\Proyecto1.l"
-{printf("comentario\n");} 
+#line 173 ".\\Proyecto1.l"
+{printf("funcion\n"); }
 	YY_BREAK
 case 112:
 YY_RULE_SETUP
-#line 174 ".\\Proyecto1.l"
+#line 175 ".\\Proyecto1.l"
 {printf("variable\n"); }
 	YY_BREAK
 case 113:
 YY_RULE_SETUP
-#line 175 ".\\Proyecto1.l"
+#line 176 ".\\Proyecto1.l"
 {printf("constante\n"); }
 	YY_BREAK
 case 114:
 YY_RULE_SETUP
-#line 178 ".\\Proyecto1.l"
+#line 179 ".\\Proyecto1.l"
 ;
 	YY_BREAK
 case 115:
 YY_RULE_SETUP
-#line 179 ".\\Proyecto1.l"
+#line 180 ".\\Proyecto1.l"
 {printf("No reconocido\t\n"); }
 	YY_BREAK
 case 116:
 YY_RULE_SETUP
-#line 182 ".\\Proyecto1.l"
+#line 183 ".\\Proyecto1.l"
 ECHO;
 	YY_BREAK
-#line 1406 "lex.yy.c"
+#line 1370 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2288,7 +2252,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 182 ".\\Proyecto1.l"
+#line 183 ".\\Proyecto1.l"
 
 
 int yywrap()

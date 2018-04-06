@@ -1,5 +1,49 @@
 <?php
-$txt = "Hello world!";
-$x = 5;
-$y = 10.5;
+function foo() {
+    echo "En foo()<br />\n";
+}
+
+function bar($arg = '')
+{
+    echo "En bar(); el argumento era '$arg'.<br />\n";
+}
+
+// Esta es una función de envoltura alrededor de echo
+function hacerecho($cadena)
+{
+    echo $cadena;
+}
+
+$func = 'foo';
+$func();        // Esto llama a foo()
+
+$func = 'bar';
+$func('prueba');  // Esto llama a bar()
+
+$func = 'hacerecho';
+$func('prueba');  // Esto llama a hacerecho()
+?>
+Los métodos de objetos también puede ser llamados con la sintaxis de funciones variables.
+
+Ejemplo #2 Ejemplo de método variable
+
+<?php
+class Foo
+{
+    function Variable()
+    {
+        $nombre = 'Bar';
+        $this->$nombre(); // Esto llama al método Bar()
+    }
+
+    function Bar()
+    {
+        echo "Esto es Bar";
+    }
+}
+
+$foo = new Foo();
+$nombrefunc = "Variable";
+$foo->$nombrefunc();  // Esto llama a $foo->Variable()
+
 ?>

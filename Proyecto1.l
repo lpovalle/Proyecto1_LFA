@@ -9,7 +9,7 @@ binario     0b[01]+
 decimal     ([1-9][0-9]*|0)
 octal       0[0-7]+
 hexa        0[xX][0-9a-fA-F]+
-id          [a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*
+id          [a-zA-Z_][a-zA-Z0-9_]*
 variable    "$"{id}
 booleano    ([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])
 lnum        [0-9]+
@@ -105,6 +105,9 @@ z [zZ]
 [[|]]                                   {printf("corchete\n"); }
 [<|>]                                   {printf("comparacion\n"); }
 
+[/][/].+                                |
+[/][*](.|\r)+[*][/]                     {printf("comentario\n");} 
+
 ";"                                     {printf("fin_instruccion\n"); }
 ","                                     {printf("coma\n"); }
 "."                                     {printf("punto\n"); } 
@@ -134,8 +137,8 @@ z [zZ]
 [+-]?{dnum}                             | 
 [+-]?{exponent_dnum}                    {printf("t decimal\n"); } 
 
-"'"(.|r)+"'"                                |
-"\"".+"\""                              {printf("cadena\n"); }
+"'"(.|\r)*"'"                                |
+"\"".*"\""                              {printf("cadena\n"); }
 
 
 "$GLOBALS"                              |
@@ -153,23 +156,21 @@ z [zZ]
 "$argc"                                 |
 "$argv"                                 {printf("variable definida\n"); }
 
-{i}{f}                                  {printf("estruct if\n"); }
-{e}{l}{s}{e}                            {printf("estruct else\n"); }
-{e}{l}{s}{e}{i}{f}                      {printf("estruct elseif\n"); }
-{w}{h}{i}{l}{e}                         {printf("estruct while\n"); }
-{d}{o}                                  {printf("estruct do\n"); }
-{f}{o}{r}                               {printf("estruct for\n"); }
-{f}{o}{r}{e}{a}{c}{h}                   {printf("estruct foreach\n"); }
-{b}{r}{e}{a}{k}                         {printf("estruct break\n"); }
-{s}{w}{i}{t}{c}{h}                      {printf("estruct switch\n"); }
-{c}{a}{s}{e}                            {printf("estruct case\n"); }
-{i}{n}{c}{l}{u}{d}{e}                   {printf("estruct include\n"); }
-{c}{o}{n}{t}{i}{n}{u}{e}                {printf("estruct continue\n"); }
-{r}{e}{t}{u}{r}{n}                      {printf("estruct return\n"); }
-{f}{u}{n}{c}{t}{i}{o}{n}                {printf("funcion\n"); }
+{i}{f}                                  |
+{e}{l}{s}{e}                            |
+{e}{l}{s}{e}{i}{f}                      |
+{w}{h}{i}{l}{e}                         |
+{d}{o}                                  |
+{f}{o}{r}                               |
+{f}{o}{r}{e}{a}{c}{h}                   |
+{b}{r}{e}{a}{k}                         |
+{s}{w}{i}{t}{c}{h}                      |
+{c}{a}{s}{e}                            |
+{i}{n}{c}{l}{u}{d}{e}                   |
+{c}{o}{n}{t}{i}{n}{u}{e}                |
+{r}{e}{t}{u}{r}{n}                      {printf("estructura de control\n"); }
 
-[/][/].+                                |
-[/][*](.|\r)+[*][/]                     {printf("comentario\n");} 
+{f}{u}{n}{c}{t}{i}{o}{n}                {printf("funcion\n"); }
 
 {variable}                              {printf("variable\n"); }
 {id}{vector}?                           {printf("constante\n"); }
