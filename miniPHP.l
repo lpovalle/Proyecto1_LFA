@@ -1,11 +1,11 @@
 %{
-
-#include <stdio.h>
-#include "miniPHP.h"
-
+    #include <stdio.h>
+    #include "miniPHP.h"
 %}
 
+%option nounput yylineno
 %start db
+
 binario                                 0b[01]+
 decimal                                 ([1-9][0-9]*|0)
 octal                                   0[0-7]+
@@ -189,8 +189,4 @@ int yywrap()
 {
     return 1;
 }
-int main(void)
-{
-    yylex();
-    return 0;
-}
+
