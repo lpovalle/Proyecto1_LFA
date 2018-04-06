@@ -111,8 +111,6 @@ z [zZ]
 "."                                     {printf("punto\n"); } 
 ":"                                     {printf("dos puntos\n"); }
 
-
-
 "+"                                     |
 "-"                                     |
 "*"                                     |
@@ -140,7 +138,23 @@ z [zZ]
 "'".+"'"                                |
 "\"".+"\""                              {printf("cadena\n"); }
 
-{variable}                              {printf("variable\n"); }
+
+"$GLOBALS"                              |
+"$_SERVER"                              | 
+"$_GET"                                 |
+"$_POST"                                |
+"$_FILES"                               |
+"$_REQUEST"                             |
+"$_SESSION"                             |
+"$_ENV"                                 |
+"$_COOKIE"                              |
+"$php_errormsg"                         |
+"$HTTP_RAW_POST_DATA"                   |
+"$http_response_header"                 |
+"$argc"                                 |
+"$argv"                                 {printf("variable definida\n"); }
+
+
 
 {i}{f}                                  {printf("estruct if\n"); }
 {e}{l}{s}{e}                            {printf("estruct else\n"); }
@@ -159,7 +173,7 @@ z [zZ]
 
 
 
-
+{variable}                              {printf("variable\n"); }
 {id}{vector}?                           {printf("constante\n"); }
 
 
