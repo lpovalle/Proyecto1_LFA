@@ -5,17 +5,17 @@
 
 %}
 
-binario     0b[01]+
-decimal     ([1-9][0-9]*|0)
-octal       0[0-7]+
-hexa        0[xX][0-9a-fA-F]+
-id          [a-zA-Z_][a-zA-Z0-9_]*
-variable    "$"{id}
-booleano    ([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])
-lnum        [0-9]+
-dnum        ([0-9]*[\.]{lnum})|({lnum}[\.][0-9]*)
-exponent_dnum [+-]?(({lnum}|{dnum})[eE][+-]?{lnum})
-vector      "["(0|[1-9][0-9]*)"]"
+%start db
+binario                                 0b[01]+
+decimal                                 ([1-9][0-9]*|0)
+octal                                   0[0-7]+
+hexa                                    0[xX][0-9a-fA-F]+
+id                                      [a-zA-Z_][a-zA-Z0-9_]*
+variable                                "$"{id}
+booleano                                ([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])
+lnum                                    [0-9]+
+dnum                                    ([0-9]*[\.]{lnum})|({lnum}[\.][0-9]*)
+exponent_dnum                           [+-]?(({lnum}|{dnum})[eE][+-]?{lnum})
 
 a [aA]
 b [bB]
@@ -45,6 +45,10 @@ y [yY]
 z [zZ]
 
 %%
+
+"$"{r}{e}{c}{o}{r}{d}{s}{e}{t}          { BEGIN db; return basedatos;}
+<db>{id}                                return campo_db;
+<db>"]"                                 {BEGIN 0; return corchete;}
 
 [<][?]{p}{h}{p}	                        |
 [?][>]		                            return php_etiqueta;
@@ -137,7 +141,7 @@ z [zZ]
 [+-]?{dnum}                             | 
 [+-]?{exponent_dnum}                    return t_real; 
 
-"'"(.|\r)*"'"                                |
+"'"(.|\r)*"'"                           |
 "\"".*"\""                              return t_cadena;
 
 
@@ -173,8 +177,7 @@ z [zZ]
 {f}{u}{n}{c}{t}{i}{o}{n}                return funcion;
 
 {variable}                              return variable;
-{id}{vector}?                           return constante;
-
+{id}                                    return constante;
 
 [ \t\n]                                 ;
 .                                       return NO_RECONOCIDO;

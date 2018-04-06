@@ -24,3 +24,5 @@
 #define igualdad 23
 #define comparacion 24
 #define coma 25
+#define basedatos 26
+#define campo_db 27
