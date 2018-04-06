@@ -1,4 +1,4 @@
-#define NO_RECONOCIDO 0
+#define NO_RECONOCIDO -1
 #define p_reservada 1
 #define o_aritmetico 2
 #define o_logico 3

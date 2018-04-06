@@ -72,7 +72,6 @@ z [zZ]
 {e}{x}{t}{e}{n}{d}{s}                   |
 {f}{i}{n}{a}{l}                         |
 {f}{i}{n}{a}{l}{l}{y}                   |
-{f}{u}{n}{c}{t}{i}{o}{n}                |
 {g}{l}{o}{b}{a}{l}                      |
 {g}{o}{t}{o}                            |
 {i}{m}{p}{l}{e}{m}{e}{n}{t}{s}          |
@@ -135,7 +134,7 @@ z [zZ]
 [+-]?{dnum}                             | 
 [+-]?{exponent_dnum}                    {printf("t decimal\n"); } 
 
-"'".+"'"                                |
+"'"(.|r)+"'"                                |
 "\"".+"\""                              {printf("cadena\n"); }
 
 
@@ -154,8 +153,6 @@ z [zZ]
 "$argc"                                 |
 "$argv"                                 {printf("variable definida\n"); }
 
-
-
 {i}{f}                                  {printf("estruct if\n"); }
 {e}{l}{s}{e}                            {printf("estruct else\n"); }
 {e}{l}{s}{e}{i}{f}                      {printf("estruct elseif\n"); }
@@ -169,9 +166,10 @@ z [zZ]
 {i}{n}{c}{l}{u}{d}{e}                   {printf("estruct include\n"); }
 {c}{o}{n}{t}{i}{n}{u}{e}                {printf("estruct continue\n"); }
 {r}{e}{t}{u}{r}{n}                      {printf("estruct return\n"); }
+{f}{u}{n}{c}{t}{i}{o}{n}                {printf("funcion\n"); }
 
-
-
+[/][/].+                                |
+[/][*](.|\r)+[*][/]                     {printf("comentario\n");} 
 
 {variable}                              {printf("variable\n"); }
 {id}{vector}?                           {printf("constante\n"); }
