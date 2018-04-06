@@ -46,25 +46,20 @@ z [zZ]
 
 %%
 
+[<][?]{p}{h}{p}	                        |
+[?][>]		                            {printf("Etiqueta php\n"); }
+
 {a}{b}{s}{t}{r}{a}{c}{t}                |
-{a}{n}{d}                               |
 {a}{r}{r}{a}{y}                         |
 {a}{s}                                  |
-{b}{r}{e}{a}{k}                         |
 {c}{a}{l}{l}{a}{b}{l}{e}                |
-{c}{a}{s}{e}                            |
 {c}{a}{t}{c}{h}                         |
 {c}{l}{a}{s}{s}                         |
 {c}{l}{o}{n}{e}                         |
-{c}{o}{n}{s}{t}                         |
-{c}{o}{n}{t}{i}{n}{u}{e}                |
 {d}{e}{c}{l}{a}{r}{e}                   |
 {d}{e}{f}{a}{u}{l}{t}                   |
 {d}{i}{e}                               |
-{d}{o}                                  |
 {e}{c}{h}{o}                            |
-{e}{l}{s}{e}                            |
-{e}{l}{s}{e}{i}{f}                      |
 {e}{m}{p}{t}{y}                         |
 {e}{n}{d}{d}{e}{c}{l}{a}{r}{e}          |
 {e}{n}{d}{f}{o}{r}                      |
@@ -77,14 +72,10 @@ z [zZ]
 {e}{x}{t}{e}{n}{d}{s}                   |
 {f}{i}{n}{a}{l}                         |
 {f}{i}{n}{a}{l}{l}{y}                   |
-{f}{o}{r}                               |
-{f}{o}{r}{e}{a}{c}{h}                   |
 {f}{u}{n}{c}{t}{i}{o}{n}                |
 {g}{l}{o}{b}{a}{l}                      |
 {g}{o}{t}{o}                            |
-{i}{f}                                  |
 {i}{m}{p}{l}{e}{m}{e}{n}{t}{s}          |
-{i}{n}{c}{l}{u}{d}{e}                   |
 {i}{n}{c}{l}{u}{d}{e}[_]{o}{n}{c}{e}    |
 {i}{n}{s}{t}{a}{n}{c}{e}{o}{f}          |
 {i}{n}{s}{t}{e}{a}{d}{o}{f}             |
@@ -93,30 +84,33 @@ z [zZ]
 {l}{i}{s}{t}                            |
 {n}{a}{m}{e}{s}{p}{a}{c}{e}             |
 {n}{e}{w}                               |
-{o}{r}                                  |
 {p}{r}{i}{n}{t}                         |
 {p}{r}{i}{v}{a}{t}{e}                   |
 {p}{r}{o}{t}{e}{c}{t}{e}{d}             |
 {p}{u}{b}{l}{i}{c}                      |
 {r}{e}{q}{u}{i}{e}{r}{e}                |
 {r}{e}{q}{u}{i}{e}{r}{e}[_]{o}{n}{c}{e} |
-{r}{e}{t}{u}{r}{n}                      |
 {s}{t}{a}{t}{i}{c}                      |
-{s}{w}{i}{t}{c}{h}                      |
 {t}{h}{r}{o}{w}                         |
 {t}{r}{a}{i}{t}                         |
 {t}{r}{y}                               |
 {u}{n}{s}{e}{t}                         |
 {u}{s}{e}                               |
 {v}{a}{r}                               |
-{w}{h}{i}{l}{e}                         |
-{x}{o}{r}                               |
 {y}{i}{e}{l}{d}                         {printf("Reservada\n"); }
 
 "="                                     {printf("igual\n"); }
+"=="                                    {printf("igualdad\n"); }
 [{|}]                                   {printf("llave\n"); }
 [(|)]                                   {printf("parentesis\n"); }
 [[|]]                                   {printf("corchete\n"); }
+[<|>]                                   {printf("comparacion\n"); }
+
+";"                                     {printf("fin_instruccion\n"); }
+","                                     {printf("coma\n"); }
+"."                                     {printf("punto\n"); } 
+":"                                     {printf("dos puntos\n"); }
+
 
 
 "+"                                     |
@@ -124,35 +118,49 @@ z [zZ]
 "*"                                     |
 "/"                                     |
 "**"                                    |
-"%"                                     {printf("Op aritmetico\t\n"); }
+"%"                                     {printf("Op aritmetico\n"); }
 
-"&&"                    {printf("op logica\t\n"); }
-"!"                     {printf("op logica\t\n"); }
+{a}{n}{d}                               |
+{o}{r}                                  |
+{x}{o}{r}                               |
+"&&"                                    |
+"||"                                    |
+"!"                                     {printf("op logica\n"); }
 
-";"                     {printf("fin_instruccion\t\n"); }
+{booleano}                              {printf("t bool\n"); }
 
-{booleano}              {printf("booleano\t\n"); }
+[+-]?{decimal}                          |
+[+-]?{binario}                          |
+[+-]?{octal}                            |
+[+-]?{hexa}                             {printf("t entero\n"); } 
 
-[+-]?{decimal}          {printf("entero\t\n"); } 
-[+-]?{binario}          {printf("entero\t\n"); } 
-[+-]?{octal}            {printf("entero\t\n"); } 
-[+-]?{hexa}             {printf("entero\t\n"); } 
+[+-]?{dnum}                             | 
+[+-]?{exponent_dnum}                    {printf("t decimal\n"); } 
 
-[+-]?{dnum}             {printf("decimal\t\n"); } 
-[+-]?{exponent_dnum}    {printf("decimal\t\n"); } 
+"'".+"'"                                |
+"\"".+"\""                              {printf("cadena\n"); }
 
-"'".+"'"                {printf("cadena\t\n"); } 
-"\"".+"\""              {printf("cadena\t\n"); }
+{variable}                              {printf("variable\n"); }
 
-{variable}              {printf("variable\t\n"); }
+{i}{f}                                  {printf("estruct if\n"); }
+{e}{l}{s}{e}                            {printf("estruct else\n"); }
+{e}{l}{s}{e}{i}{f}                      {printf("estruct elseif\n"); }
+{w}{h}{i}{l}{e}                         {printf("estruct while\n"); }
+{d}{o}                                  {printf("estruct do\n"); }
+{f}{o}{r}                               {printf("estruct for\n"); }
+{f}{o}{r}{e}{a}{c}{h}                   {printf("estruct foreach\n"); }
+{b}{r}{e}{a}{k}                         {printf("estruct break\n"); }
+{s}{w}{i}{t}{c}{h}                      {printf("estruct switch\n"); }
+{c}{a}{s}{e}                            {printf("estruct case\n"); }
+{i}{n}{c}{l}{u}{d}{e}                   {printf("estruct include\n"); }
+{c}{o}{n}{t}{i}{n}{u}{e}                {printf("estruct continue\n"); }
+{r}{e}{t}{u}{r}{n}                      {printf("estruct return\n"); }
 
-{id}{vector}?                   {printf("constante\t\n"); }
-"define("("'"{id}"'"|"\""{id}"\""),[ ]*("'"[^\n]+"'"|"\""[^\n]+"\"")")"   {printf("constante\t\n"); }
 
 
 
 
-
+{id}{vector}?                           {printf("constante\n"); }
 
 
 [ \t\n]                 ;

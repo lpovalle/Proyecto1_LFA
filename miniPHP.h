@@ -9,7 +9,7 @@
 #define variable 9
 #define const 10
 #define e_if 11
-#define e_then 12
+#define e_elseif 12
 #define e_else 13
 #define e_while 14
 #define e_dowhile 15
@@ -27,5 +27,12 @@
 #define llave 27
 #define parentesis 28
 #define corchete 29
+#define f_instruccion 30
+#define punto 31
+#define dospuntos 32
+#define php_etiqueta 33
+#define igualdad 34
+#define comparacion 35
+#define e_case 36 
 
 
